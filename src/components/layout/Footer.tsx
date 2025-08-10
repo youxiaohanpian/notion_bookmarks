@@ -11,6 +11,8 @@ interface FooterProps {
 }
 
 export default function Footer({ config, className = "" }: FooterProps) {
+  //自动更新copyright year
+  const currentYear = new Date().getFullYear();
   return (
     <footer className={`fixed bottom-0 left-0 right-0 bg-background border-t py-4 z-10 ${className}`}>
       <div className="container mx-auto px-4">
@@ -104,7 +106,7 @@ export default function Footer({ config, className = "" }: FooterProps) {
               Built with Next.js and Notion
             </p>
             <p className="text-sm text-muted-foreground">
-              2024 {config.SITE_AUTHOR}. All rights reserved.
+              {currentYear} {config.SITE_AUTHOR}. All rights reserved.
             </p>
           </div>
         </div>
