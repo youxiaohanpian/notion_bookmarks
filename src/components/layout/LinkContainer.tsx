@@ -105,7 +105,7 @@ export default function LinkContainer({
         );
       })}
       {mounted && currentTime && (
-        <div className="mt-12 text-center text-sm text-muted-foreground">
+        <div className="mt-12 text-left text-sm text-muted-foreground w-full">
           最近更新：{formatDate(currentTime)}
         </div>
       )}

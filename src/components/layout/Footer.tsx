@@ -15,7 +15,7 @@ export default function Footer({ config, className = "" }: FooterProps) {
   const currentYear = new Date().getFullYear();
   return (
     <footer className={`fixed bottom-0 left-0 right-0 bg-background border-t py-4 z-10 ${className}`}>
-      <div className="container mx-auto px-4">
+      <div className="container w-full max-w-none mx-auto px-4">
         <div className="flex flex-col items-center gap-4 md:flex-row md:justify-between">
           <div className="flex items-center space-x-4">
             {config.SOCIAL_GITHUB && (
@@ -101,7 +101,7 @@ export default function Footer({ config, className = "" }: FooterProps) {
               </a>
             )}
           </div>
-          <div className="flex flex-col items-center gap-2 md:flex-row md:gap-4">
+          <div className="flex flex-col items-center gap-2 md:flex-row md:gap-4 md:ml-auto">
             <p className="hidden md:block text-sm text-muted-foreground">
               Built with Next.js and Notion
             </p>

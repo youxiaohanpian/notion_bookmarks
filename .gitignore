@@ -52,3 +52,6 @@ yarn-error.log*
 
 # Trae AI IDE files
 .trae/
+
+# Visual Studio
+.vs/
