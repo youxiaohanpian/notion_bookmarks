@@ -1,13 +1,16 @@
 import "./globals.css"
 import "qweather-icons/font/qweather-icons.css"
 import "@/themes/theme.css"
+import { Inter } from "next/font/google"
 import { ThemeProvider } from "@/components/ui/ThemeProvider"
-import type { Metadata } from "next"
+import { Metadata } from "next"
 import { Clarity } from "@/components/analytics/Clarity"
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics"
 
 import { getWebsiteConfig } from "@/lib/notion"
 import { mergeConfig } from "@/config"
+
+const inter = Inter({ subsets: ["latin"] })
 
 export const viewport = {
   width: "device-width",
@@ -75,7 +78,7 @@ export default async function RootLayout({
         <Clarity clarityId={config.CLARITY_ID || ''} />
         <GoogleAnalytics gaId={config.GA_ID || ''} />
       </head>
-      <body>
+      <body className={inter.className}>
         <ThemeProvider>
           {children}
         </ThemeProvider>
