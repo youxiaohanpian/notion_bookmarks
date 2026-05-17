@@ -19,12 +19,7 @@ export const viewport = {
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  let config
-  try {
-    config = mergeConfig(await getWebsiteConfig())
-  } catch {
-    config = mergeConfig({})
-  }
+  const config = mergeConfig(await getWebsiteConfig())
   
   return {
     metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
