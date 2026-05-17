@@ -194,7 +194,26 @@ export const getWebsiteConfig = cache(async () => {
         return config;
     } catch (error) {
         console.error('获取网站配置失败:', error);
-        throw new Error('获取网站配置失败');
+        const defaultConfig: WebsiteConfig = {
+            SITE_TITLE: '我的导航',
+            SITE_DESCRIPTION: '个人导航网站',
+            SITE_KEYWORDS: '导航,网址导航',
+            SITE_AUTHOR: '',
+            SITE_FOOTER: '',
+            SITE_FAVICON: '/favicon.ico',
+            THEME_NAME: 'simple-light',
+            SHOW_THEME_SWITCHER: 'true',
+            SOCIAL_GITHUB: '',
+            SOCIAL_BLOG: '',
+            SOCIAL_X: '',
+            SOCIAL_JIKE: '',
+            SOCIAL_WEIBO: '',
+            SOCIAL_XIAOHONGSHU: '',
+            CLARITY_ID: '',
+            GA_ID: '',
+            WIDGET_CONFIG: '',
+        };
+        return defaultConfig;
     }
 });
 
