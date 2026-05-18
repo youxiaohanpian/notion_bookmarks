@@ -18,9 +18,9 @@ export const defaultConfig = {
 export const envConfig = {
     // Notion配置
     NOTION_TOKEN: process.env.NOTION_TOKEN,
-    NOTION_LINKS_DB_ID: process.env.NOTION_LINKS_DB_ID || '24a92d03a33b813a99dcefa360c662d7',
-    NOTION_WEBSITE_CONFIG_ID: process.env.NOTION_WEBSITE_CONFIG_ID || '24892d03a33b8088a11ad7842c1cb3a8',
-    NOTION_CATEGORIES_DB_ID: process.env.NOTION_CATEGORIES_DB_ID || '24892d03a33b8004b0b1fc936edc99f8',
+    NOTION_LINKS_DB_ID: '24a92d03a33b813a99dcefa360c662d7',
+    NOTION_WEBSITE_CONFIG_ID: '24892d03a33b8088a11ad7842c1cb3a8',
+    NOTION_CATEGORIES_DB_ID: '24892d03a33b8004b0b1fc936edc99f8',
     // 分析和统计
     CLARITY_ID: process.env.NEXT_PUBLIC_CLARITY_ID ?? '',
     GA_ID: process.env.GA_ID ?? '',
