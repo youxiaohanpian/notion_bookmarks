@@ -1,6 +1,7 @@
 import "./globals.css"
 import "qweather-icons/font/qweather-icons.css"
 import "@/themes/theme.css"
+import { Inter } from "next/font/google"
 import { ThemeProvider } from "@/components/ui/ThemeProvider"
 import { Metadata } from "next"
 import { Clarity } from "@/components/analytics/Clarity"
@@ -9,6 +10,8 @@ import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics"
 import { getWebsiteConfig } from "@/lib/notion"
 import { mergeConfig } from "@/config"
 
+const inter = Inter({ subsets: ["latin"] })
+
 export const viewport = {
   width: "device-width",
   initialScale: 1,
@@ -16,12 +19,7 @@ export const viewport = {
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  let config
-  try {
-    config = mergeConfig(await getWebsiteConfig())
-  } catch {
-    config = mergeConfig({})
-  }
+  const config = mergeConfig(await getWebsiteConfig())
   
   return {
     metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
@@ -75,7 +73,7 @@ export default async function RootLayout({
         <Clarity clarityId={config.CLARITY_ID || ''} />
         <GoogleAnalytics gaId={config.GA_ID || ''} />
       </head>
-      <body>
+      <body className={inter.className}>
         <ThemeProvider>
           {children}
         </ThemeProvider>
